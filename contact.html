@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Momodu Hamza</title>
+    <meta
+      name="description"
+      content="Contact Momodu Hamza for business administration, engineering, Bitcoin mining repairs, and entrepreneurship consultation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>document.documentElement.dataset.theme = localStorage.getItem("site-theme") === "light" ? "light" : "dark";</script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="header-brand-group">
+          <a class="bites-wordmark" href="index.html" aria-label="360bites home">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="10.5"></circle>
+              <circle cx="16" cy="16" r="6.5"></circle>
+              <path d="M4 5v8m-2-8v5m4-5v5m-2 8v14M27 5c-2 3-3 6-3 9h5c0-3-1-6-2-9Zm0 9v14"></path>
+            </svg>
+            <span><span class="bites-number">360</span><span class="bites-name">bites</span></span>
+          </a>
+          <a href="index.html" class="brand" aria-label="Momodu Hamza home">
+            <span class="brand-mark">MH</span>
+            <span class="brand-text">Momodu Hamza</span>
+          </a>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Projects</a>
+          <a href="about.html#approach">My Approach</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+            </svg>
+            <span class="theme-label">Light mode</span>
+          </button>
+          <a href="contact.html" class="btn btn-primary nav-cta">Let’s Talk</a>
+          <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
+            <div class="page-hero-content reveal">
+              <p class="eyebrow">Contact</p>
+              <h1>Let’s discuss your next business or technical opportunity.</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow eyebrow-alt">Get in touch</p>
+            <h2>Professional support for operations, technical issues, and growth.</h2>
+            <p>
+              Whether you need administrative guidance, technical troubleshooting, mining equipment
+              support, or strategic business direction, I’m available to assess your needs and
+              recommend the most practical next step.
+            </p>
+
+            <div class="contact-card reveal">
+              <div class="contact-item">
+                <span>Email</span>
+                <a href="mailto:h.360bites@gmail.com">h.360bites@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <span>Phone</span>
+                <a href="tel:+2348104013539">08104013539</a>
+              </div>
+              <div class="contact-item">
+                <span>WhatsApp</span>
+                <a href="https://wa.me/2348104013539?text=Hello%20Momodu%20Hamza%2C%20I%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              </div>
+              <div class="contact-item">
+                <span>Location</span>
+                <p>Ibadan Way, New Bussa, Niger State</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-wrap reveal" id="contact-form">
+            <form data-contact-form novalidate>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone number (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="08104013539" />
+              </div>
+              <div class="form-group">
+                <label for="service">Service required</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="Business Administration">Business Administration</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Bitcoin Mining Repairs">Bitcoin Mining Repairs</option>
+                  <option value="Entrepreneurship Consultation">Entrepreneurship Consultation</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Project description</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project, challenge, or business need..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Inquiry</button>
+              <p class="form-feedback" aria-live="polite" hidden></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 Momodu Hamza. All rights reserved.</p>
+        <a href="index.html">Back to top</a>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/2348104013539?text=Hello%20Momodu%20Hamza%2C%20I%20would%20like%20to%20connect%20with%20you." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M12.04 2a9.87 9.87 0 0 0-8.43 15l-1.3 4.75 4.86-1.27A9.94 9.94 0 0 0 12.04 22 10 10 0 1 0 12.04 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-2.88.75.77-2.8-.2-.31A8.2 8.2 0 1 1 12.04 20.2Zm4.5-6.14c-.25-.12-1.49-.74-1.72-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8.99-.15.16-.3.18-.55.06-.25-.12-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.38.1-.5.1-.1.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.49-.61 1.7-1.2.2-.59.2-1.1.14-1.21-.06-.1-.22-.16-.47-.28Z"/>
+      </svg>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

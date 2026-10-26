@@ -28,9 +28,11 @@
           </a>
         </div>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
           <a href="services.html">Services</a>
-          <a href="work.html">Work</a>
+          <a href="work.html">Projects</a>
+          <a href="about.html#approach">My Approach</a>
           <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -63,21 +65,38 @@
 
       <section class="section-spacing">
         <div class="container">
+          <div class="portfolio-filters reveal" aria-label="Project categories">
+            <button class="filter-btn active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="business">Business Administration</button>
+            <button class="filter-btn" type="button" data-filter="engineering">Engineering</button>
+            <button class="filter-btn" type="button" data-filter="mining">Bitcoin Mining Repairs</button>
+            <button class="filter-btn" type="button" data-filter="entrepreneurship">Entrepreneurship</button>
+          </div>
+
           <div class="portfolio-grid">
-            <article class="case-study reveal">
+            <article class="case-study reveal" data-category="business">
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Business leadership" />
+              <div class="case-meta"><span>Business Administration</span></div>
               <h3>360bites Leadership</h3>
               <p>Leading strategic decisions and operational planning for business development and customer-focused growth.</p>
             </article>
-            <article class="case-study reveal">
+            <article class="case-study reveal" data-category="engineering">
               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Business administration" />
+              <div class="case-meta"><span>Engineering Projects</span></div>
               <h3>Administrative Optimization</h3>
               <p>Improving process flow, internal systems, and daily execution for smoother business operations.</p>
             </article>
-            <article class="case-study reveal">
+            <article class="case-study reveal" data-category="mining">
               <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=80" alt="Bitcoin mining repair" />
+              <div class="case-meta"><span>Bitcoin Mining Repairs</span></div>
               <h3>Mining Equipment Repair</h3>
               <p>Diagnosing hardware issues and maintaining uptime for technology-heavy systems and mining setups.</p>
+            </article>
+            <article class="case-study reveal" data-category="entrepreneurship">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Entrepreneurship strategy" />
+              <div class="case-meta"><span>Entrepreneurship</span></div>
+              <h3>Growth Planning</h3>
+              <p>Developing a practical strategy for a new venture, resource planning, and sustainable business expansion.</p>
             </article>
           </div>
         </div>

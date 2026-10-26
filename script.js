@@ -56,6 +56,21 @@ if (slides.length) {
   }, 3500);
 }
 
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioCards = document.querySelectorAll('.case-study');
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const selected = button.dataset.filter;
+    filterButtons.forEach((item) => item.classList.toggle('active', item === button));
+
+    portfolioCards.forEach((card) => {
+      const matches = selected === 'all' || card.dataset.category === selected;
+      card.style.display = matches ? '' : 'none';
+    });
+  });
+});
+
 const modalMarkup = `
   <div class="contact-modal" id="contactModal" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -102,12 +117,46 @@ contactModal?.addEventListener('click', (event) => {
   }
 });
 
+function setFormFeedback(form, type, message) {
+  const feedback = form.querySelector('.form-feedback');
+  if (!feedback) return;
+
+  feedback.classList.remove('success', 'error');
+  feedback.classList.add(type);
+  feedback.textContent = message;
+  feedback.hidden = false;
+}
+
 document.querySelectorAll('[data-contact-form]').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const name = form.querySelector('[name="name"]')?.value || 'there';
-    const email = form.querySelector('[name="email"]')?.value || '';
-    const message = form.querySelector('[name="message"]')?.value || '';
+
+    const name = form.querySelector('[name="name"]')?.value.trim() || '';
+    const email = form.querySelector('[name="email"]')?.value.trim() || '';
+    const phone = form.querySelector('[name="phone"]')?.value.trim() || '';
+    const service = form.querySelector('[name="service"]')?.value || '';
+    const message = form.querySelector('[name="message"]')?.value.trim() || '';
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name.length < 2) {
+      setFormFeedback(form, 'error', 'Please enter your full name.');
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      setFormFeedback(form, 'error', 'Please enter a valid email address.');
+      return;
+    }
+
+    if (service === '') {
+      setFormFeedback(form, 'error', 'Please select the service you need.');
+      return;
+    }
+
+    if (message.length < 10) {
+      setFormFeedback(form, 'error', 'Please add a short project description with at least 10 characters.');
+      return;
+    }
 
     const modalTitle = document.getElementById('modalTitle');
     if (modalTitle) {
@@ -116,9 +165,11 @@ document.querySelectorAll('[data-contact-form]').forEach((form) => {
 
     const modalText = contactModal?.querySelector('p');
     if (modalText) {
-      modalText.textContent = `Your message has been received${email ? ' from ' + email : ''}. I will respond soon.\n\n${message}`;
+      const contactSummary = phone ? ` from ${email} (${phone})` : ` from ${email}`;
+      modalText.textContent = `Your inquiry for ${service} has been drafted${contactSummary}. I will review your project details and respond soon.\n\n${message}`;
     }
 
+    setFormFeedback(form, 'success', 'Your message is ready to send. I will get back to you soon.');
     openModal();
     form.reset();
   });

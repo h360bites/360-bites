@@ -278,6 +278,12 @@ p {
   color: var(--text);
 }
 
+.btn-tertiary {
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--text);
+}
+
 .hero {
   padding: 45px 0 72px;
 }
@@ -596,6 +602,46 @@ p {
   padding: 30px;
 }
 
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 26px;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.24), rgba(45, 212, 191, 0.2));
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.case-meta {
+  margin-bottom: 12px;
+}
+
+.case-meta span {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  color: var(--primary-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .contact-item + .contact-item {
   margin-top: 22px;
   padding-top: 22px;
@@ -645,6 +691,7 @@ p {
 }
 
 .form-group input,
+.form-group select,
 .form-group textarea {
   background: var(--surface-subtle);
   border: 1px solid var(--line);
@@ -656,6 +703,28 @@ p {
 .form-group textarea {
   min-height: 140px;
   resize: vertical;
+}
+
+.form-feedback {
+  display: none;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+}
+
+.form-feedback.success {
+  display: block;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #a7f3d0;
+}
+
+.form-feedback.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  color: #fecaca;
 }
 
 .info-grid,
