@@ -1,5 +1,25 @@
 const revealItems = document.querySelectorAll('.reveal');
 
+const themeToggle = document.querySelector('.theme-toggle');
+const themeLabel = themeToggle?.querySelector('.theme-label');
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  if (themeLabel && themeToggle) {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    themeLabel.textContent = `${nextTheme[0].toUpperCase()}${nextTheme.slice(1)} mode`;
+    themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+  }
+}
+
+setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  setTheme(nextTheme);
+  localStorage.setItem('site-theme', nextTheme);
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -20,32 +40,8 @@ const mainNav = document.querySelector('.main-nav');
 if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('mobile-open');
-
-    if (isOpen) {
-      mainNav.style.display = 'flex';
-      mainNav.style.position = 'absolute';
-      mainNav.style.top = '82px';
-      mainNav.style.left = '16px';
-      mainNav.style.right = '16px';
-      mainNav.style.padding = '16px';
-      mainNav.style.background = 'rgba(17, 28, 49, 0.96)';
-      mainNav.style.border = '1px solid rgba(255, 255, 255, 0.12)';
-      mainNav.style.borderRadius = '18px';
-      mainNav.style.flexDirection = 'column';
-      mainNav.style.alignItems = 'flex-start';
-    } else {
-      mainNav.style.display = '';
-      mainNav.style.position = '';
-      mainNav.style.top = '';
-      mainNav.style.left = '';
-      mainNav.style.right = '';
-      mainNav.style.padding = '';
-      mainNav.style.background = '';
-      mainNav.style.border = '';
-      mainNav.style.borderRadius = '';
-      mainNav.style.flexDirection = '';
-      mainNav.style.alignItems = '';
-    }
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
 }
 
