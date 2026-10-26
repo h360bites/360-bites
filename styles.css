@@ -138,6 +138,13 @@ p {
   font-weight: 700;
 }
 
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
 .brand-mark {
   width: 42px;
   height: 42px;
@@ -165,6 +172,36 @@ p {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.bites-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.bites-wordmark svg {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: #f05a35;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bites-number {
+  color: #f05a35;
+}
+
+.bites-name {
+  color: #69b94a;
 }
 
 .theme-toggle {
@@ -814,9 +851,20 @@ p {
 
   .nav-actions {
     margin-left: auto;
+    gap: 8px;
   }
 
   .nav-actions .nav-cta {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .theme-label {
     display: none;
   }
 }
@@ -853,5 +901,25 @@ p {
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-brand-group {
+    gap: 10px;
+  }
+
+  .bites-wordmark {
+    gap: 6px;
+    font-size: 1.35rem;
+  }
+
+  .bites-wordmark svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-text {
+    display: none;
   }
 }
